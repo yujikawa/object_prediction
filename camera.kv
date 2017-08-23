@@ -1,0 +1,166 @@
+<CameraClick>:
+    GridLayout:
+        size: root.size
+        cols: 2
+        BoxLayout:
+            orientation: 'vertical'
+            Camera:
+                id: camera
+                size_hint_y: 0.7
+                resolution: (500,500)
+                play: True
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            GridLayout:
+                cols: 2
+                size_hint_y: 0.3
+                Button:
+                    id: button
+
+                    on_press: root.capture()
+                    background_color: [0.8, 0.8, 0.8, 1]
+                    Image:
+                        source: './images/camera_down.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+                Button:
+                    id: button
+                    on_press: root.clear_image()
+                    background_color: [0.8, 0.8, 0.8, 1]
+                    Image:
+                        source: './images/clear.png'
+                        center_x: self.parent.center_x
+                        center_y: self.parent.center_y
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 0.5, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Image:
+                id: "target_image"
+                size_hint: 1, 1
+                source: root.source
+            GridLayout:
+                size: root.size
+                cols: 2
+                Label:
+                    color: 1,1,1,1
+                    text: "Prediction name"
+                    size_hint_x: 0.7
+                    size_hint_y: 0.05
+                    canvas.before:
+                        Color:
+                            rgba: 0.,  0.25882353,  0.84705882, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    color: 1,1,1,1
+                    text: "Prob"
+                    size_hint_x: 0.3
+                    size_hint_y: 0.05
+                    canvas.before:
+                        Color:
+                            rgba: 0.,  0.25882353,  0.84705882, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    id: name1
+                    color: 0,0,0,1
+                    text: root.name1
+                    size_hint_x: 0.7
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    id: prob1
+                    color: 0,0,0,1
+                    text: root.prob1
+                    size_hint_x: 0.3
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    canvas:
+                        Color:
+                            rgba: 0.78823529,  0.63921569,  0.94901961,  1
+                        Rectangle:
+                            pos: self.pos
+                            size: root.bar1
+                Label:
+                    id: name2
+                    color: 0,0,0,1
+                    text: root.name2
+                    size_hint_x: 0.7
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 0.78823529,  0.83921569,  0.94901961, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    id: prob2
+                    color: 0,0,0,1
+                    text: root.prob2
+                    size_hint_x: 0.3
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 0.78823529,  0.83921569,  0.94901961, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    canvas:
+                        Color:
+                            rgba: 0.78823529,  0.63921569,  0.94901961,  1
+                        Rectangle:
+                            pos: self.pos
+                            size: root.bar2
+                Label:
+                    id: name3
+                    color: 0,0,0,1
+                    text: root.name3
+                    size_hint_x: 0.7
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                Label:
+                    id: prob3
+                    color: 0,0,0,1
+                    text: root.prob3
+                    size_hint_x: 0.3
+                    size_hint_y: 0.1
+                    canvas.before:
+                        Color:
+                            rgba: 1, 1, 1, 1
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                    canvas:
+                        Color:
+                            rgba: 0.78823529,  0.63921569,  0.94901961,  1
+                        Rectangle:
+                            pos: self.pos
+                            size: root.bar3
